@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* MAIN SECTION */
+
+#main{
+  background-color: #C5B0CD;
+  z-index: -100;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* CARD SECTION */
+
+.card{
+  position: relative;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+  background-color: #468A9A;
+  border-radius: 10px;
+  box-shadow: 10px 20px 2rem #f364c3 , -10px -20px 2rem #7695eb ;
+  z-index: -10;
+}
+
+
+/* IMAGE SECTION */
+
+
+.card .img-section img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card .img-section {
+  height: 105px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+/* follow section */
+
+.card .img-section .follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.card .img-section .follow .flow .flo {
+  color: #fff;
+  background-color: #f34;
+  padding: 13px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.card .img-section .follow .flow .flo:hover {
+  color: #f34;
+  border: 2px solid #f34;
+  background-color: transparent;
+  transform: scale(0.96);
+  transition: all 0.2s ease;
+}
+
+
+
+.card .img-section .follow i {
+  color: #f34;
+  cursor: pointer;
+}
+
+
+
+
+/* follow background effect */
+
+@property --border-glow {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.card .img-section .follow .flow {
+  position: relative;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+/* Solid glow border */
+.card .img-section .follow .flow::before {
+  content: ""; 
+  position: absolute;
+  inset: -2px; 
+  background: conic-gradient(
+    from var(--border-glow),
+    #DDC3C3,
+    #A376A2,
+    #8D5F8C,
+    #6B3F69,
+    #DDC3C3
+  );
+  animation: glow-flow 3s linear infinite;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Blurred glow effect */
+.card .img-section .follow .flow::after {
+  content: ""; 
+  position: absolute;
+  inset: -5px; 
+  background: conic-gradient(
+    from var(--border-glow),
+    #DDC3C3,
+    #A376A2,
+    #8D5F8C,
+    #6B3F69,
+    #DDC3C3
+  );
+  animation: glow-flow 3s linear infinite;
+  z-index: -1;
+  border-radius: inherit;
+  filter: blur(1rem);
+}
+
+
+  
+@keyframes glow-flow {
+  from {
+    --border-glow: 0deg;
+  }
+  to {
+    --border-glow: 360deg;
+  }
+}
+
+
+/* TEXT SECTION */
+
+.card h1{
+  font-size: 2.5rem;
+}
+
+.card h2{
+  font-size: 1.2rem ;
+  font-weight: 500;
+  color: #fffbfbf5;
+}
+
+
+.like-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.like-btn h3{
+  background-color: #F564A9;
+  padding: 10px  25px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.like-btn i {
+  color: #F564A9 ;
+}
+
+/* LIKE HOVER */
+
+.like-btn h3:hover{
+  color: #f564a9;
+}
