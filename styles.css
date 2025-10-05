@@ -11,25 +11,28 @@ body {
   width: 100%;
 }
 
+body{
+  background-color: #C5B0CD;  
+}
 
 /* MAIN SECTION */
-
-#main{
+#main {
   background-color: #C5B0CD;
-  z-index: -100;
+  /* z-index: -100; */
   position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 30px;
 }
 
-
-
 /* CARD SECTION */
-
-.card{
+.card {
   position: relative;
   width: 300px;
   height: 500px;
@@ -38,16 +41,23 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 40px 20px;
-  background-color: #468A9A;
+  background-color: #A79277;
   border-radius: 10px;
-  box-shadow: 10px 20px 2rem #f364c3 , -10px -20px 2rem #7695eb ;
-  z-index: -10;
+  box-shadow: 10px 20px 2rem #f364c3, -10px -20px 2rem #7695eb;
+  z-index: 1;
 }
 
 
+
+.card-blue{
+  background-color: #B17457;
+}
+
+.card-green{
+  background-color: #E4C59E;
+}
+
 /* IMAGE SECTION */
-
-
 .card .img-section img {
   width: 100px;
   height: 100px;
@@ -64,10 +74,7 @@ body {
   gap: 10px;
 }
 
-
-
 /* follow section */
-
 .card .img-section .follow {
   display: flex;
   justify-content: center;
@@ -89,23 +96,17 @@ body {
 .card .img-section .follow .flow .flo:hover {
   color: #f34;
   border: 2px solid #f34;
-  background-color: transparent;
+  background-color: #468A9A;
   transform: scale(0.96);
   transition: all 0.2s ease;
 }
-
-
 
 .card .img-section .follow i {
   color: #f34;
   cursor: pointer;
 }
 
-
-
-
 /* follow background effect */
-
 @property --border-glow {
   syntax: "<angle>";
   inherits: false;
@@ -120,17 +121,10 @@ body {
 
 /* Solid glow border */
 .card .img-section .follow .flow::before {
-  content: ""; 
+  content: "";
   position: absolute;
-  inset: -2px; 
-  background: conic-gradient(
-    from var(--border-glow),
-    #DDC3C3,
-    #A376A2,
-    #8D5F8C,
-    #6B3F69,
-    #DDC3C3
-  );
+  inset: -2px;
+  background: conic-gradient(from var(--border-glow), #DDC3C3, #A376A2, #8D5F8C, #6B3F69, #DDC3C3);
   animation: glow-flow 3s linear infinite;
   z-index: -1;
   border-radius: inherit;
@@ -138,68 +132,59 @@ body {
 
 /* Blurred glow effect */
 .card .img-section .follow .flow::after {
-  content: ""; 
+  content: "";
   position: absolute;
-  inset: -5px; 
-  background: conic-gradient(
-    from var(--border-glow),
-    #DDC3C3,
-    #A376A2,
-    #8D5F8C,
-    #6B3F69,
-    #DDC3C3
-  );
+  inset: -5px;
+  background: conic-gradient(from var(--border-glow), #DDC3C3, #A376A2, #8D5F8C, #6B3F69, #DDC3C3);
   animation: glow-flow 3s linear infinite;
   z-index: -1;
   border-radius: inherit;
   filter: blur(1rem);
 }
 
-
-  
 @keyframes glow-flow {
   from {
     --border-glow: 0deg;
   }
+
   to {
     --border-glow: 360deg;
   }
 }
 
-
 /* TEXT SECTION */
-
-.card h1{
-  font-size: 2.5rem;
+.card h1 {
+  font-size: 2rem;
 }
 
-.card h2{
-  font-size: 1.2rem ;
+.card h2 {
+  font-size: 1.2rem;
   font-weight: 500;
   color: #fffbfbf5;
 }
 
-
-.like-btn{
+.like-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-.like-btn h3{
+.like-btn h3 {
   background-color: #F564A9;
-  padding: 10px  25px;
+  padding: 10px 25px;
   border-radius: 20px;
   color: #fff;
 }
 
 .like-btn i {
-  color: #F564A9 ;
+  color: #F564A9;
 }
 
 /* LIKE HOVER */
-
-.like-btn h3:hover{
-  color: #f564a9;
+.like-btn h3:hover {
+  background-color: transparent;
+  border: 2px solid #F564A9;
+  color: #F564A9;
+  transform: scale(0.95);
 }
